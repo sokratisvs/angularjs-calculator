@@ -1,0 +1,19 @@
+{
+  "name": "ng-calculator-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "\u001b[D\u001b[D\u001b[D\u001bindex\u001b[F",
+  "scripts": {
+    "test": "(\u001b[F\u001b[B\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Dindex.js)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sokratisvs/angularjs-calculator.git"
+  },
+  "author": "sokratis valavanis",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sokratisvs/angularjs-calculator/issues"
+  },
+  "homepage": "https://github.com/sokratisvs/angularjs-calculator#readme"
+}
