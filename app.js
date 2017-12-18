@@ -1,0 +1,1 @@
+angular.module('ng-calculate', ['ui.bootstrap']);

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Calculator</title>
+    
+    <!--Google CDN for angularJS & other dependencies-->
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"> </script>
+    <script src="scripts/lodash.min.js"></script>
+    <script src="scripts/money.min.js"></script>
+    
+    <!--Boostrap link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
+    <!-- Calculator Controller -->
+    <script src="scripts/calcController.js"></script>
+    
+    
+</head>
+
+<body ng-app="CalculatorApp" ng-controller="calcController" >
+   
+   <div class="main"> 
+   
+    <div class="row justify-content-center container-fluid">
+     <div class="jumbotron">
+         <!-- show the title -->
+       <h1 class="display-3">{{ title }}</h1>
+         <!--left column-->
+           <div id="leftColumn" class="col-xs-6">
+             <div class="form-group">
+               <h3>Calculator</h3>
+      
+                  <!-- first number input -->
+                  <p>Enter 1st number: <input type="number" ng-model="a" align="middle"/></p>
+                                  
+       
+                  <!-- selection of operator -->
+                  <p>Select operator <select ng-model="operator">
+                  <option>+</option>
+                  <option>-</option>
+                  <option>*</option>
+                  <option>/</option>
+                  </select>
+                  </p>      
+     
+                  <!-- second number input -->
+                  <p>Enter 2nd number: <input type="number" ng-model="b" /></p>
+                  <p>Result: {{ result() }} </p>
+           </div> <!--form-group -->  
+               
+         </div> <!-- left-column-->
+         
+         <!--right column-->
+           <div id="rightColumn" class="col-xs-6">
+             <div class="form-group">
+               <h3>Currency converter</h3>
+               
+                <!-- cash amount input -->
+                <p>Enter amount: <input type="number" ng-model="amount" align="middle"/></p>
+                
+                 <!-- selection of currency -->
+                  <p>Select currency from:
+                 <select ng-options="x.currency as x.currency for x in parsedList" name="category1" ng-change="currChanged(amount, selectedCur)" ng-model="selectedCur" required></select>
+                 </p>
+                 <!--
+                  <p>Select currency to:
+                 <select ></select>
+                 </p>       -->
+                        
+             </div> <!--form-group-->
+           </div>  <!-- right column -->
+        </div>  <!--jumbotron -->
+           
+          <!-- Currency results    -->             
+       <div ng-show="currencyList[0]">
+        <div ng-repeat="curr in currencyList | CurrencyListFrom: selectedCur">
+               {{curr.rate}}
+            <b>{{curr.currency}}</b>
+        
+        </div>
+    </div>
+       </div>    
+</div> <!-- main -->
+    
+</body>
+
+</html>
